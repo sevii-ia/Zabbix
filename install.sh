@@ -19,7 +19,7 @@ MYSQL_SCRIPT
 
 sudo sed -i "s/^# DBPassword=.*/DBPassword=password/" /etc/zabbix/zabbix_server.conf
 
-sudo sed -i -e 's/# listen 8080;/listen 80;/' -e 's/# server_name example.com;/server_name 192.168.1.215;/' /etc/zabbix/nginx.conf
+sudo sed -i -e 's/^#\s*listen\s*8080;/listen 80;/' -e 's/^#\s*server_name\s*example.com;/server_name 192.168.1.170;/' /etc/zabbix/nginx.conf
 
 systemctl restart zabbix-server zabbix-agent nginx php8.3-fpm
 systemctl enable zabbix-server zabbix-agent nginx php8.3-fpm
