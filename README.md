@@ -37,12 +37,9 @@ This is a learning repository and not a production-ready monitoring system.
 
 ```txt
 Zabbix/
-├── configs/
-├── templates/
-├── scripts/
-├── docker/
-├── docs/
-└── README.md
+├── LICENSE
+├── README.md
+└── install.sh
 ````
 
 ---
