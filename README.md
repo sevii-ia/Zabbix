@@ -1,79 +1,78 @@
-# Zabbix Installation Guide
+# Zabbix
 
-Цей репозиторій містить інструкції для встановлення Zabbix на сервері з Ubuntu 24.04.
+Educational repository dedicated to learning and practicing monitoring, infrastructure management, and Zabbix configuration.
 
-## Кроки для встановлення
+This project contains study materials, configuration examples, setup experiments, and practical tasks related to Zabbix and system monitoring.
 
-1. Завантажте та встановіть пакет Zabbix:
+---
 
-   ```bash
-   sudo wget https://repo.zabbix.com/zabbix/7.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_7.0-2+ubuntu24.04_all.deb
-   sudo dpkg -i zabbix-release_7.0-2+ubuntu24.04_all.deb
-   sudo apt update
-   ```
+## 📚 About
 
-2. Встановіть необхідні пакети:
+The repository was created for educational purposes and includes:
 
-   ```bash
-   sudo apt install -y zabbix-server-mysql zabbix-frontend-php zabbix-nginx-conf zabbix-sql-scripts zabbix-agent
-   ```
+- Zabbix configuration examples
+- Monitoring experiments
+- Infrastructure monitoring practice
+- Templates and setup files
+- Server monitoring exercises
+- Networking and DevOps learning materials
 
-3. Створіть базу даних та користувача для Zabbix:
+This is a learning repository and not a production-ready monitoring system.
 
-   ```bash
-   sudo mysql -u root <<MYSQL_SCRIPT
-   create database zabbix character set utf8mb4 collate utf8mb4_bin;
-   create user zabbix@localhost identified by 'password';
-   grant all privileges on zabbix.* to zabbix@localhost;
-   set global log_bin_trust_function_creators = 1;
-   MYSQL_SCRIPT
-   ```
+---
 
-4. Імпортуйте початкові SQL-скрипти Zabbix:
+## 🛠️ Technologies & Tools
 
-   ```bash
-   zcat /usr/share/zabbix-sql-scripts/mysql/server.sql.gz | mysql --default-character-set=utf8mb4 -uzabbix -p'password' zabbix
-   ```
+- Zabbix
+- Linux
+- Bash
+- Docker
+- MySQL / PostgreSQL
+- Networking tools
+- Monitoring utilities
 
-5. Вимкніть довірчі функції для створення функцій у MySQL:
+---
 
-   ```bash
-   sudo mysql -u root <<MYSQL_SCRIPT
-   set global log_bin_trust_function_creators = 0;
-   MYSQL_SCRIPT
-   ```
+## 📁 Project Structure
 
-6. Налаштуйте пароль для бази даних у конфігураційному файлі Zabbix:
+```txt
+Zabbix/
+├── configs/
+├── templates/
+├── scripts/
+├── docker/
+├── docs/
+└── README.md
+````
 
-   ```bash
-   sudo sed -i "s/^# DBPassword=.*/DBPassword=password/" /etc/zabbix/zabbix_server.conf
-   ```
+---
 
-7. Налаштуйте конфігурацію Nginx для Zabbix:
+## 🎯 Purpose
 
-   ```bash
-   sudo sed -i -e 's/^#\s*listen\s*8080;/listen 80;/' -e 's/^#\s*server_name\s*example.com;/server_name 192.168.1.170;/' /etc/zabbix/nginx.conf
-   ```
+The main purpose of this repository is:
 
-8. Перезапустіть сервіси:
+* Learning Zabbix
+* Practicing monitoring systems
+* Understanding infrastructure observability
+* Improving DevOps skills
+* Experimenting with server monitoring
 
-   ```bash
-   systemctl restart zabbix-server zabbix-agent nginx php8.3-fpm
-   ```
+---
 
-9. Увімкніть автозапуск служб:
+## 🧪 Topics Covered
 
-   ```bash
-   systemctl enable zabbix-server zabbix-agent nginx php8.3-fpm
-   ```
+* Host monitoring
+* Network monitoring
+* Triggers and alerts
+* Templates
+* Metrics collection
+* Docker monitoring
+* Linux server monitoring
 
-## Після встановлення
+---
 
-1. Ви можете отримати доступ до інтерфейсу Zabbix через веб-браузер, використовуючи адресу вашого сервера (наприклад, http://192.168.1.170).
+## 📄 License
 
-2. Завершіть налаштування через веб-інтерфейс, вказавши деталі з'єднання з базою даних та інші параметри.
+This project is licensed under the MIT License.
 
-### Примітки
-
-- Замініть `'password'` на ваш фактичний пароль у відповідних командах.
-- Налаштування Nginx включає IP-адресу `192.168.1.170`. Змініть її на вашу відповідну IP-адресу.
+See the [LICENSE](LICENSE) file for more information.
