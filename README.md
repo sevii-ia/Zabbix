@@ -16,7 +16,6 @@ This project contains Zabbix setup experiments, configuration examples, and lear
 - [Usage](#usage)
 - [Topics Covered](#topics-covered)
 - [Troubleshooting](#troubleshooting)
-- [Contributors](#contributors)
 - [License](#license)
 
 ## Features
@@ -91,10 +90,6 @@ If the install script fails, check that:
 * The `install.sh` script is complete before running it
 
 The current `install.sh` appears to be a single-line draft and may need formatting or completion before reliable execution.
-
-## Contributors
-
-* Vsevolod Zyabkin
 
 ## License
 
