@@ -1,39 +1,44 @@
 # Zabbix
 
-Educational repository dedicated to learning and practicing monitoring, infrastructure management, and Zabbix configuration.
+Educational repository for learning Zabbix monitoring, infrastructure observability, and basic server monitoring configuration.
 
-This project contains study materials, configuration examples, setup experiments, and practical tasks related to Zabbix and system monitoring.
+## Overview
 
----
+This project contains Zabbix setup experiments, configuration examples, and learning materials for practicing infrastructure monitoring with Linux, Bash, databases, and networking tools.
 
-## 📚 About
+> This repository is intended for education and practice, not production deployment.
 
-The repository was created for educational purposes and includes:
+## Table of Contents
 
-- Zabbix configuration examples
-- Monitoring experiments
-- Infrastructure monitoring practice
-- Templates and setup files
-- Server monitoring exercises
-- Networking and DevOps learning materials
+- [Features](#features)
+- [Technologies](#technologies)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Topics Covered](#topics-covered)
+- [Troubleshooting](#troubleshooting)
+- [Contributors](#contributors)
+- [License](#license)
 
-This is a learning repository and not a production-ready monitoring system.
+## Features
 
----
+- Zabbix configuration practice
+- Linux server monitoring examples
+- Host and network monitoring exercises
+- Trigger and alert experimentation
+- Template-based monitoring practice
+- Bash-based installation script
 
-## 🛠️ Technologies & Tools
+## Technologies
 
 - Zabbix
 - Linux
 - Bash
-- Docker
-- MySQL / PostgreSQL
-- Networking tools
-- Monitoring utilities
+- MySQL
+- PHP frontend
+- Nginx
+- Zabbix Agent
 
----
-
-## 🚀 Getting Started
+## Installation
 
 Clone the repository:
 
@@ -42,46 +47,57 @@ git clone https://github.com/sevii-ia/Zabbix.git
 cd Zabbix
 ````
 
-Run the project:
+Make the installation script executable:
 
 ```bash
-install.sh
+chmod +x install.sh
 ```
 
-Open in browser:
+Run the script:
 
-```txt
+```bash
+./install.sh
+```
+
+## Usage
+
+After installation, open Zabbix in your browser:
+
+```text
 http://localhost
 ```
 
----
+Use the Zabbix web interface to configure hosts, templates, triggers, alerts, and monitoring dashboards.
 
-## 🎯 Purpose
-
-The main purpose of this repository is:
-
-* Learning Zabbix
-* Practicing monitoring systems
-* Understanding infrastructure observability
-* Improving DevOps skills
-* Experimenting with server monitoring
-
----
-
-## 🧪 Topics Covered
+## Topics Covered
 
 * Host monitoring
 * Network monitoring
+* Metrics collection
 * Triggers and alerts
 * Templates
-* Metrics collection
-* Docker monitoring
 * Linux server monitoring
+* Docker monitoring
+* DevOps monitoring basics
 
----
+## Troubleshooting
 
-## 📄 License
+If the install script fails, check that:
+
+* You are running Ubuntu 24.04 or a compatible system
+* You have `sudo` privileges
+* MySQL is installed and running
+* The Zabbix repository package URL is still valid
+* The `install.sh` script is complete before running it
+
+The current `install.sh` appears to be a single-line draft and may need formatting or completion before reliable execution.
+
+## Contributors
+
+* Vsevolod Zyabkin
+
+## License
 
 This project is licensed under the MIT License.
 
-See the [LICENSE](LICENSE) file for more information.
+See the [LICENSE](LICENSE) file for details.
