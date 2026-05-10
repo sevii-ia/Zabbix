@@ -47,6 +47,29 @@ Zabbix/
 
 ---
 
+## 🚀 Getting Started
+
+Clone the repository:
+
+```bash
+git clone https://github.com/sevii-ia/Zabbix.git
+cd Zabbix
+````
+
+Run the project:
+
+```bash
+install.sh
+```
+
+Open in browser:
+
+```txt
+http://localhost
+```
+
+---
+
 ## 🎯 Purpose
 
 The main purpose of this repository is:
