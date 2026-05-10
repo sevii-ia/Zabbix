@@ -33,17 +33,6 @@ This is a learning repository and not a production-ready monitoring system.
 
 ---
 
-## 📁 Project Structure
-
-```txt
-Zabbix/
-├── LICENSE
-├── README.md
-└── install.sh
-````
-
----
-
 ## 🚀 Getting Started
 
 Clone the repository:
